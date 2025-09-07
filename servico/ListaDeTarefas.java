@@ -1,53 +1,57 @@
-package modelo;
-import java.time.LocalDateTime;
+package servico;
+import java.util.ArrayList;
+import modelo.Tarefa;
 
-//cria uma classe
-public class Tarefa {
-    private int id;
-    private static int contador;
-    private LocalDateTime data;
-    private String nome;
-    private String descricao;
-    private Boolean concluido;
+public class ListaDeTarefas {
+    private ArrayList<Tarefa> tarefas = new ArrayList<>();//cria o array para guardar as tarefas
 
-    //constructor
-    public Tarefa(String nome, String descricao) {
-        this.id = ++contador;
-        this.data = data;
-        this.nome = nome;
-        this.descricao = descricao;
-        this.concluido = false;
-    }//inicializa um objeto
+    //metodo para adicionar uma tarefa no ArrayList
+    public void adicionar (String nome, String descricao){
+        tarefas.add(new Tarefa(nome, descricao));
+    }
 
-    public int getId(){
-        return this.id;
-    }//retorna o id
-    //metodos
-    public Boolean isConcluido() {
-        return concluido;
-    }//retorna o valor do concluído
+    public void menu(){
+        System.out.println("============ LISTA DE TAREFAS ============");
+        System.out.println("1 - Adicionar Tarefa");
+        System.out.println("2 - Concluir Tarefa");
+        System.out.println("3 - Listar Tarefas");
+        System.out.println("4 - Editar Tarefas");
+        System.out.println("5 - Excluir Tarefa");
+        System.out.println("0 - Sair");
+        System.out.println("==========================================");
+    }
 
-    public Boolean setConcluido() {
-        this.concluido = true;
-        return true;
-    }//conclui
+    //metodo para imprimir lista
+    public void listar(){
+        if (tarefas.isEmpty()) {
+            System.out.println("============ LISTA DE TAREFAS ============");
+            System.out.println("Não há tarefas!");
+            System.out.println("==========================================");
+            return;
+        }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-        this.concluido = false;
-    }//adiciona nome
+        System.out.println("============ LISTA DE TAREFAS ============");
+        for(Tarefa t: tarefas){
+            System.out.println("Tarefa: " + t.getId());
+            System.out.println("Nome: " + t.getNome());
+            System.out.println("Descrição: " + t.getDescricao());
+            System.out.println((t.isConcluido() ? "[X]" : "[ ]"));
+            System.out.println(" ");
+        }
+        System.out.println("==========================================");
+    }
 
-    public void setDescricao(String descricao){
-        this.descricao = descricao;
-        this.concluido = false;
-    }//adiciona descrição
+    public Tarefa buscar(int id){
 
-    public String getNome() {
-        return nome;
-    }//retorna o nome
+    }
 
-    public String getDescricao() {
-        return descricao;
-    }//retorna a descrição
+    public void editar(int id, String novoNome, String novaDescricao){
 
-}
+    }
+
+    public void excluir(int id){
+
+    }
+
+
+} 
