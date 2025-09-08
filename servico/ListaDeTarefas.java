@@ -71,3 +71,15 @@ public class ListaDeTarefas {
 
     }
 } 
+
+     //metodo para concluir
+    public void concluir(int id){
+        Tarefa id_concluir = buscar(id);
+            if(id_concluir != null){
+                id_concluir.setConcluido();
+                System.out.println("Tarefa concluída com sucesso!");
+            }else{
+                System.out.println("ERRO! Tarefa não encontrada!");
+            }
+    }
+}
