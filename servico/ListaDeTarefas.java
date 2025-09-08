@@ -42,15 +42,15 @@ public class ListaDeTarefas {
     }
 
     public Tarefa buscar(int id){
-
+    //completar
     }
 
     public void editar(int id, String novoNome, String novaDescricao){
-
+    //completar
     }
 
     public void excluir(int id){
-
+    //completar
     }
 
 
