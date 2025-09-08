@@ -42,11 +42,23 @@ public class ListaDeTarefas {
     }
 
     public Tarefa buscar(int id){
-    //completar
+         for(Tarefa t: tarefas){
+            if (t.getId() == id){
+                return t;
+            }
+        }
+        return null;
     }
 
     public void editar(int id, String novoNome, String novaDescricao){
-    //completar
+        Tarefa id_editar = buscar(id);
+        if(id_editar != null){
+            id_editar.setNome(novoNome);
+            id_editar.setDescricao(novaDescricao);
+            System.out.println("Tarefa editada com sucesso!");
+        }else{
+            System.out.println("ERRO! Tarefa não encontrada!");
+        }
     }
 
     public void excluir(int id){
