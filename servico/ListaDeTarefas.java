@@ -61,4 +61,13 @@ public class ListaDeTarefas {
         }
     }
 
+    public void excluir(int id){
+        Tarefa id_excluir = buscar(id);
+        if(id_excluir != null){
+            tarefas.remove(id_excluir);//remove tarefa usando id
+            System.out.println("Tarefa excluída com sucesso!");
+        }else{
+            System.out.println("ERRO! Tarefa não encontrada!");
 
+    }
+} 
