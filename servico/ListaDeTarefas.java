@@ -1,6 +1,6 @@
 package servico;
 import java.util.ArrayList;
-import modelo.Tarefa;
+import modelo.todolist.Tarefa;
 
 public class ListaDeTarefas {
     private ArrayList<Tarefa> tarefas = new ArrayList<>();//cria o array para guardar as tarefas
