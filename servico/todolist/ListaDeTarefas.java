@@ -1,15 +1,16 @@
-package servico;
+package servico.todolist;
 import java.util.ArrayList;
 import modelo.todolist.Tarefa;
 
 public class ListaDeTarefas {
-    private ArrayList<Tarefa> tarefas = new ArrayList<>();//cria o array para guardar as tarefas
+    private final ArrayList<Tarefa> tarefas = new ArrayList<>();//cria o array para guardar as tarefas
 
     //metodo para adicionar uma tarefa no ArrayList
     public void adicionar (String nome, String descricao){
         tarefas.add(new Tarefa(nome, descricao));
     }
 
+    //metodo para mostrar o menu
     public void menu(){
         System.out.println("============ LISTA DE TAREFAS ============");
         System.out.println("1 - Adicionar Tarefa");
@@ -36,11 +37,13 @@ public class ListaDeTarefas {
             System.out.println("Nome: " + t.getNome());
             System.out.println("Descrição: " + t.getDescricao());
             System.out.println((t.isConcluido() ? "[X]" : "[ ]"));
+            System.out.println(t.getData());
             System.out.println(" ");
         }
         System.out.println("==========================================");
     }
 
+    //metodo para buscar a partir do id
     public Tarefa buscar(int id){
          for(Tarefa t: tarefas){
             if (t.getId() == id){
@@ -50,6 +53,7 @@ public class ListaDeTarefas {
         return null;
     }
 
+    //metodo para editar
     public void editar(int id, String novoNome, String novaDescricao){
         Tarefa id_editar = buscar(id);
         if(id_editar != null){
@@ -61,6 +65,7 @@ public class ListaDeTarefas {
         }
     }
 
+    //metodo para excluir
     public void excluir(int id){
         Tarefa id_excluir = buscar(id);
         if(id_excluir != null){

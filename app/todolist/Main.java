@@ -1,6 +1,6 @@
-package app;
+package app.todolist;
 import java.util.Scanner;
-import servico.ListaDeTarefas;
+import servico.todolist.ListaDeTarefas;
 
 public class Main {
     public static void main(String[] args){
