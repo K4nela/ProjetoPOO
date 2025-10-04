@@ -1,4 +1,4 @@
-package modelo.todolist;
+package todolist;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
